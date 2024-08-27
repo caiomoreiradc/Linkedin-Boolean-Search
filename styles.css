@@ -1,0 +1,99 @@
+:root {
+    --platinum: #e0e0e2ff; /* hsl(240, 3%, 88%) */
+    --tiffany-blue: #81d2c7ff; /* hsl(172, 47%, 66%) */
+    --french-gray: #b5bad0ff; /* hsl(229, 22%, 76%) */
+    --glaucous: #7389aeff; /* hsl(218, 27%, 57%) */
+    --lapis-lazuli: #416788ff; /* hsl(208, 35%, 39%) */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent;
+}
+
+.extension-container {
+    width: 100vw;
+    max-width: 500px;
+    height: 80vw;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.extension-content {
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    color: var(--lapis-lazuli);
+    margin-bottom: 20px;
+    font-size: large;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--lapis-lazuli);
+    font-style: oblique;
+    font-weight: 500;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    border: 1px solid var(--french-gray);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--lapis-lazuli);
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--lapis-lazuli);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--glaucous);
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.input-group label {
+    color: var(--glaucous);
+}
+
+.signature{
+    color: var(--lapis-lazuli);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
