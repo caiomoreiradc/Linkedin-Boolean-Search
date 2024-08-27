@@ -20,6 +20,8 @@
                 <label for="experienceLevel">Nível*:</label>
                 <select id="experienceLevel">
                     <option value="">Selecione</option>
+                    <option value="estagio">Estágio</option>
+                    <option value="trainee">Trainee</option>
                     <option value="junior">Júnior</option>
                     <option value="pleno">Pleno</option>
                     <option value="senior">Sênior</option>
@@ -30,16 +32,28 @@
                 <label for="jobIgnore">Ignorar:</label>
                 <input type="text" id="jobIgnore" placeholder="PJ, Temporário">
             </div>
+            
+            <div class="input-group">
+                <label for="countryId">País:</label>
+                <select id="countryId">
+                    <option value="106057199">Brasil</option>
+                    <option value="91000011">LatAm</option>
+                    <option value="103644278">Estados Unidos</option>
+                    <option value="91000000">Europa</option>
+                    <option value="92000000">Mundialmente</option>
+                </select>
+            </div>
 
             <div class="input-group">
                 <label for="remote">
                     <input type="checkbox" id="remote"> Apenas Remoto
                 </label>
             </div>
-            
+
             <button id="searchButton">Pesquisar</button>
             <br>
             <a class="signature" href="https://www.linkedin.com/in/caiomdc" target=”_blank”>written by Caio Carvalho💻</a>
+       
         </div>
     </div>
     <script src="popup.js"></script>

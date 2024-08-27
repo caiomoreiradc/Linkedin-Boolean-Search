@@ -25,7 +25,11 @@ document.getElementById('searchButton').addEventListener('click', function() {
         searchQuery += ` AND NOT (${ignoreSearch})`;
     }
 
+
+    // Adicionar geoId para buscar vagas  por  país
+    var geoId = document.getElementById('countryId').value;    
+
     // Abrir uma nova aba com a busca no LinkedIn
-    const url = `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(searchQuery)}`;
+    const url = `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(searchQuery)}&geoId=${encodeURIComponent(geoId)}`;
     chrome.tabs.create({ url: url });
 });
