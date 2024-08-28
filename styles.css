@@ -1,9 +1,9 @@
 :root {
-    --platinum: #e0e0e2ff; /* hsl(240, 3%, 88%) */
-    --tiffany-blue: #81d2c7ff; /* hsl(172, 47%, 66%) */
-    --french-gray: #b5bad0ff; /* hsl(229, 22%, 76%) */
-    --glaucous: #7389aeff; /* hsl(218, 27%, 57%) */
-    --lapis-lazuli: #416788ff; /* hsl(208, 35%, 39%) */
+    --platinum: #e0e0e2ff; 
+    --tiffany-blue: #81d2c7ff; 
+    --french-gray: #b5bad0ff; 
+    --glaucous: #7389aeff; 
+    --lapis-lazuli: #416788ff; 
 }
 
 body {
@@ -12,25 +12,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 98vh;
+    width: 70vh;
     background-color: transparent;
 }
 
 .extension-container {
-    width: 100vw;
-    max-width: 500px;
-    height: 80vw;
+    width: 100%; 
+    height: auto;
+    max-width: 400px; 
+    height: auto; 
     background-color: white;
-    border: 1px solid white;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    padding: 20px; 
+    box-sizing: border-box; 
 }
 
 .extension-content {
-    width: 90%;
+    width: 100%; 
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -57,7 +56,7 @@ label {
 }
 
 input[type="text"], select {
-    width: 100%;
+    width: 100%; /* Full width for input fields */
     padding: 10px;
     height: 40px;
     border: 1px solid var(--french-gray);
@@ -68,7 +67,7 @@ input[type="text"], select {
 }
 
 button {
-    width: 100%;
+    width: 100%; /* Full width for the button */
     padding: 10px;
     background-color: var(--lapis-lazuli);
     border: none;
@@ -88,12 +87,22 @@ input[type="checkbox"] {
 }
 
 .input-group label {
-    color: var(--glaucous);
+    color: var(--lapis-lazuli);
 }
 
-.signature{
+.signature {
     color: var(--lapis-lazuli);
     text-decoration: none;
     font-weight: 700;
     font-size: 0.9rem;
+}
+
+.check-group label {
+    display: flex;
+    align-items: center;
+    color: var(--lapis-lazuli); 
+}
+
+input[type="checkbox"] {
+    margin-right: 5px; 
 }
