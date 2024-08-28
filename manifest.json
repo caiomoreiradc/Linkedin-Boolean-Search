@@ -12,9 +12,5 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": "/icons/icon256.png"
-      },
-    "permissions": [
-        "tabs",
-        "activeTab"
-      ]
+      }
 }
