@@ -1,12 +1,32 @@
-document.getElementById('searchButton').addEventListener('click', function() {
+document.body.style.overflow = 'hidden';
+
+document.getElementById('searchType').addEventListener('change', function() {
+    const searchType = document.getElementById('searchType').value;
+
+    // Desabilitar checkboxes se o tipo de pesquisa for 'candidatos'
+    if (searchType === 'candidatos') {
+        document.getElementById('remote').disabled = true;
+        document.getElementById('simplificada').disabled = true;
+    } else {
+        // Habilitar checkboxes se o tipo de pesquisa não for 'candidatos'
+        document.getElementById('remote').disabled = false;
+        document.getElementById('simplificada').disabled = false;
+    }
+});
+
+document.getElementById('searchButton').addEventListener('click', function() 
+{
 
     // Obter os valores digitados
+    const searchType = document.getElementById('searchType').value
     const jobTitles = document.getElementById('jobTitle').value.split(',').map(title => title.trim()).filter(title => title !== '');
     var jobLevel = document.getElementById('experienceLevel').value;
     const jobIgnore = document.getElementById('jobIgnore').value.split(',').map(ignore => ignore.trim()).filter(ignore => ignore !== '');
-    // Obter Checkboxes
+
+    // Obter Checkboxes checked value
     const remoteOnly = document.getElementById('remote').checked;
     const candidaturaSimplificada = document.getElementById('simplificada').checked;
+
     //geoId do Brasil
     const isBrasil = 106057199
 
@@ -59,16 +79,25 @@ document.getElementById('searchButton').addEventListener('click', function() {
         searchQuery += ` AND NOT (${ignoreSearch})`;
     }
 
-    // criar url
 
-    let url = `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(searchQuery)}&geoId=${encodeURIComponent(geoId)}`
+    // Criar URL base
+    var baseUrl = `https://www.linkedin.com/`;
 
-    //adicionar candidatura simplificada na url caso marcado a checkbox
-    if(candidaturaSimplificada)
+    // Construir URL inicial com parâmetros de Vaga
+    var url = `${baseUrl}jobs/search/?keywords=${encodeURIComponent(searchQuery)}&geoId=${encodeURIComponent(geoId)}`;
+
+    if (candidaturaSimplificada) 
     {
         url += '&f_AL=true';
+    } 
+
+    if (searchType === 'candidatos') 
+    {
+        // Atualizar o caminho para 'candidatos'
+        url = `${baseUrl}search/results/people/?keywords=${encodeURIComponent(searchQuery)}&geoUrn=${encodeURIComponent(geoId)}`; //geoId de pessoas é geoUrn
     }
 
     //Criar aba
+    console.log(url);
     chrome.tabs.create({ url: url });
 });
