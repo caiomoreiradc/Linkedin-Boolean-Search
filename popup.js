@@ -63,16 +63,6 @@ document.getElementById('searchButton').addEventListener('click', function()
     //Define variável searchQuery
     let searchQuery = `${booleanSearch}`;
 
-    //Adiciona Remoto na query
-    if (remoteOnly === true && geoId !== isBrasil) 
-    {
-        searchQuery += ' AND remote';
-    } 
-    else if (remoteOnly) 
-    {
-        searchQuery += ' AND remoto';
-    }
-
     // Adicionar 'AND NOT' se houver valores no campo jobIgnore
     if (jobIgnore.length > 0) {
         const ignoreSearch = jobIgnore.map(ignore => `"${ignore}"`).join(' OR ');
@@ -95,6 +85,11 @@ document.getElementById('searchButton').addEventListener('click', function()
     {
         // Atualizar o caminho para 'candidatos'
         url = `${baseUrl}search/results/people/?keywords=${encodeURIComponent(searchQuery)}&geoUrn=${encodeURIComponent(geoId)}`; //geoId de pessoas é geoUrn
+    }
+
+    if(remoteOnly)
+    {
+        url += '&f_WT=2';
     }
 
     //Criar aba
