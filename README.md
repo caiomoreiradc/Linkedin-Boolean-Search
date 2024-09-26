@@ -3,4 +3,4 @@
 - Made with: HTML - CSS - JAVASCRIPT
 - Download Available on Chrome Store
 <br>
-![app image](https://imgur.com/vCUiH25.png)
+![app image](https://i.imgur.com/vCUiH25.png)
